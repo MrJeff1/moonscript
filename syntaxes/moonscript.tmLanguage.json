@@ -1,0 +1,60 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "MoonScript",
+  "scopeName": "source.moon",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#keywords" },
+    { "include": "#numbers" },
+    { "include": "#functions" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-dash.moon",
+          "match": "--.*$"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.moon",
+          "begin": "\"",
+          "end": "\""
+        },
+        {
+          "name": "string.quoted.single.moon",
+          "begin": "'",
+          "end": "'"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.moon",
+          "match": "\\b(class|extends|if|then|else|elseif|for|while|return|break|continue|and|or|not|in|do|switch|when|import|export|try|catch|with)\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.moon",
+          "match": "\\b\\d+(\\.\\d+)?\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.moon",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\s*(?=\\=\\>)"
+        }
+      ]
+    }
+  }
+}

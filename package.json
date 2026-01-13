@@ -1,0 +1,62 @@
+{
+  "name": "moonscript",
+  "displayName": "MoonScript",
+  "description": "MoonScript language support with syntax highlighting and compilation",
+  "version": "0.0.1",
+  "publisher": "joseph",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:moonscript"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "moonscript",
+        "aliases": [
+          "MoonScript",
+          "moon"
+        ],
+        "extensions": [
+          ".moon"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "moonscript",
+        "scopeName": "source.moon",
+        "path": "./syntaxes/moonscript.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "moonscript.compile",
+        "title": "MoonScript: Compile to Lua"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "npx tsc -p ./",
+    "watch": "npx tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0",
+    "@vscode/vsce": "^3.0.0"
+  },
+  "files": [
+    "out/**",
+    "syntaxes/**",
+    "language-configuration.json",
+    "package.json",
+    "README.md"
+  ]
+}
